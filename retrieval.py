@@ -41,9 +41,9 @@ def _get_embedding_model():
     if _embedding_model is not None:
         return _embedding_model
 
-    if _manager is None:
+    if FoundryLocalManager.instance is None:
         FoundryLocalManager.initialize(Configuration(app_name="local-rag-assistant"))
-        _manager = FoundryLocalManager.instance
+    _manager = FoundryLocalManager.instance
 
     model = _manager.catalog.get_model(EMBEDDING_MODEL_ALIAS)
     model.download()
