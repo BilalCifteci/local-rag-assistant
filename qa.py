@@ -13,6 +13,13 @@ import retrieval
 
 CHAT_MODEL_ALIAS = "phi-3.5-mini"
 
+# Hafta 5 testlerinde gozlemlendi: konu ici sorularda en yuksek retrieval
+# benzerligi ~0.62-0.69, konu disi sorularda ~0.31-0.37 cikiyor. Model tek
+# basina "bilmiyorum" talimatina guvenilir uymadigi icin bu esigin altinda
+# LLM'e hic sormadan sabit bir fallback cevabi donduruyoruz.
+MIN_SIMILARITY_THRESHOLD = 0.45
+FALLBACK_ANSWER = "Bu bilgi elimdeki dokumanlarda yok."
+
 SYSTEM_PROMPT = (
     "Sen, verilen dokuman parcalarina dayanarak soru cevaplayan bir asistansin. "
     "Kurallar:\n"
@@ -53,6 +60,9 @@ def _build_context(chunks: list[retrieval.RetrievedChunk]) -> str:
 def answer_query(question: str, k: int = 3) -> str:
     """Soruyu retrieval + yerel LLM ile cevaplar, bulunan kaynaklari da dondurur."""
     chunks = retrieval.get_top_chunks(question, k=k)
+    if not chunks or chunks[0].similarity < MIN_SIMILARITY_THRESHOLD:
+        return FALLBACK_ANSWER
+
     context = _build_context(chunks)
 
     model = _get_chat_model()
