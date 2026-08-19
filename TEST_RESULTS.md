@@ -2,30 +2,38 @@
 
 ## Cevaplanabilir Sorular (dokumanlarda karsiligi var)
 
-### Soru: RAG nedir ve neden kullanilir?
-- En yuksek retrieval benzerligi: 0.6739
-- Cevap:  RAG, kaynak: prompt_engineering.md, belirt: "kaynağa dayalı, güvenilir cevap" sağlamak için sistem prompt içine yazılı prompt-dayanabilir, güçlü doğruluğu ve güncel/özel bilgi sağlamak için kullanılır.
+### Soru: Yazilim Muhendisligi bolumunde staj kac is gunu surer?
+- En yuksek retrieval benzerligi: 0.6563
+- Cevap:  30 iş günü, staj kac is günü
 
-### Soru: Foundry Local'in en onemli ozelligi nedir?
-- En yuksek retrieval benzerligi: 0.6449
-- Cevap:  Foundry Local'in en onemli ozelliği, kullanıcı verilerini hiçbir zaman internete çıkarmayı sağlamaktır, bu da uygulamaları sıfır ağ çağrısıyla yerel ve dictatörlü AI sunabilme yeteneği sağlar.
+Kaynak: mezuniyet_sartlari.md, pay ve net olarak, staj kac is günü sorunun cevabını doğrudan referans alır.
 
-### Soru: Kosinus benzerligi ne ise yarar?
-- En yuksek retrieval benzerligi: 0.6178
-- Cevap:  Kosinüs benzerliği, birkaç dokumanın (vektörler) arasındaki anlam yakınlığını ölçmek için kullanılan yöntemdir, bu da SQLite'da `embedding` sütununu kullanarak kosinüs benzerliği hesaplamak için kullanılır. Bu yöntem, dilbilgilere ilişkin dokumanların (vektörler) arasındaki benzerlik değerlendirmesini sağlar, bu da RAG sistemi için soru cevaplarını daha doğru bir dil modeline bağlamaktır.
+### Soru: Mezun olabilmek icin GANO en az kac olmali?
+- En yuksek retrieval benzerligi: 0.6433
+- Cevap:  Kaynak: mezuniyet_sartlari.md
+Cevabı: 2,00
+Açıklama: Öğrenci Genel Ağırlıklı Not Ortalaması (GANO) en az 2,00 olanlara "sınamalı öğrenci" statüsüne girer, bu, mezun olabilmek için gerekçe taşımak anlamına gelir.
 
-### Soru: Bu projede SQLite hangi amacla kullaniliyor?
-- En yuksek retrieval benzerligi: 0.6901
-- Cevap:  Projenizin doküman parçalarını (chunk) ve bunlara karşılık gelen embedding vektörlerini saklamak için SQLite kullandığını belirt. Chunk tablosunu oluşturma ve içerici işleme amacıyla kullandı.
+### Soru: Derslere devamsizlik sinirini asan ogrenciye hangi not verilir?
+- En yuksek retrieval benzerligi: 0.6523
+- Cevap:  (DD) notu
+
+### Soru: Bir donemde en fazla kac dersten cekilebilirim?
+- En yuksek retrieval benzerligi: 0.4437
+- Cevap:  6 dersten
+
+### Soru: Lisans programinin normal ve azami ogretim suresi kac yildir?
+- En yuksek retrieval benzerligi: 0.6834
+- Cevap:  4 yıldır
 
 ## Cevaplanamaz Sorular (dokuman disi konu)
 
 ### Soru: Bugun hava durumu nasil?
-- En yuksek retrieval benzerligi: 0.3674
+- En yuksek retrieval benzerligi: 0.3061
 - Cevap: Bu bilgi elimdeki dokumanlarda yok.
 
 ### Soru: 2026 Dunya Kupasi'ni hangi ulke kazandi?
-- En yuksek retrieval benzerligi: 0.3136
+- En yuksek retrieval benzerligi: 0.2687
 - Cevap: Bu bilgi elimdeki dokumanlarda yok.
 
 ## Edge Case: Bos Sorgu

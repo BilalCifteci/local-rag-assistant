@@ -17,10 +17,11 @@ import retrieval
 RESULTS_PATH = pathlib.Path(__file__).parent / "TEST_RESULTS.md"
 
 ANSWERABLE_QUESTIONS = [
-    "RAG nedir ve neden kullanilir?",
-    "Foundry Local'in en onemli ozelligi nedir?",
-    "Kosinus benzerligi ne ise yarar?",
-    "Bu projede SQLite hangi amacla kullaniliyor?",
+    "Yazilim Muhendisligi bolumunde staj kac is gunu surer?",
+    "Mezun olabilmek icin GANO en az kac olmali?",
+    "Derslere devamsizlik sinirini asan ogrenciye hangi not verilir?",
+    "Bir donemde en fazla kac dersten cekilebilirim?",
+    "Lisans programinin normal ve azami ogretim suresi kac yildir?",
 ]
 
 UNANSWERABLE_QUESTIONS = [

@@ -14,10 +14,13 @@ import retrieval
 CHAT_MODEL_ALIAS = "phi-3.5-mini"
 
 # Hafta 5 testlerinde gozlemlendi: konu ici sorularda en yuksek retrieval
-# benzerligi ~0.62-0.69, konu disi sorularda ~0.31-0.37 cikiyor. Model tek
+# benzerligi ~0.44-0.69, konu disi sorularda ~0.27-0.31 cikiyor. Model tek
 # basina "bilmiyorum" talimatina guvenilir uymadigi icin bu esigin altinda
-# LLM'e hic sormadan sabit bir fallback cevabi donduruyoruz.
-MIN_SIMILARITY_THRESHOLD = 0.45
+# LLM'e hic sormadan sabit bir fallback cevabi donduruyoruz. Esik, iki grup
+# arasindaki bosluga gore (yonetmelik bilgi tabaniyla) 0.35'e kalibre edildi;
+# ilk denemede 0.45 kullanilmisti ama gecerli bir soruyu (0.44 benzerlik)
+# yanlislikla reddetmisti.
+MIN_SIMILARITY_THRESHOLD = 0.35
 FALLBACK_ANSWER = "Bu bilgi elimdeki dokumanlarda yok."
 
 SYSTEM_PROMPT = (
